@@ -41,7 +41,7 @@ export class RegisterComponent {
   onSubmit() {
     if (this.form.invalid) return;
     const { username, email, password } = this.form.value;
-    this.auth.register(username!, email!, password!).subscribe((success: boolean) => {
+    this.auth.register().subscribe((success: boolean) => {
       if (success) {
         this.message = 'Registration successful! You can now log in.';
         this.form.reset();
