@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -17,13 +17,11 @@ export class AuthService {
   private readonly EXPIRY_KEY = 'auth_token_expiry';
   private userSubject = new BehaviorSubject<AuthUser | null>(this.getUserFromStorage());
   user$ = this.userSubject.asObservable();
-  private logoutTimer: any;
-
-  constructor(private router: Router) {}
+  private logoutTimer: number | undefined;
+  private router = inject(Router);
 
   // Mock login: accepts any username/password, returns a fake JWT
-  login(username: string, password: string): Observable<boolean> {
-    // In real app, call backend API here
+  login(username: string): Observable<boolean> {
     const fakeToken = 'mock-jwt-token';
     const fakeRefreshToken = 'mock-refresh-token';
     const fakeUser: AuthUser = { id: 1, username, email: username + '@example.com', role: 'Admin' };
@@ -39,8 +37,7 @@ export class AuthService {
   }
 
   // Mock register: always succeeds
-  register(username: string, email: string, password: string): Observable<boolean> {
-    // In real app, call backend API here
+  register(): Observable<boolean> {
     return of(true);
   }
 
@@ -85,7 +82,7 @@ export class AuthService {
 
   private setLogoutTimer(ms: number) {
     if (this.logoutTimer) clearTimeout(this.logoutTimer);
-    this.logoutTimer = setTimeout(() => this.logout(), ms);
+    this.logoutTimer = window.setTimeout(() => this.logout(), ms);
   }
 
   private getUserFromStorage(): AuthUser | null {
@@ -93,15 +90,13 @@ export class AuthService {
     return user ? JSON.parse(user) : null;
   }
 
-  // NOTE: For production, use HttpOnly cookies for JWT/refresh tokens to prevent XSS. See setTokenWithHttpOnlyCookie().
-
   /**
    * Example stub for future migration to HttpOnly cookies
    * In a real app, the backend would set the token in a secure, HttpOnly cookie.
    */
-  setTokenWithHttpOnlyCookie(token: string) {
+  setTokenWithHttpOnlyCookie(): void {
     // This is just a placeholder for future implementation.
     // In Angular, you do NOT access HttpOnly cookies from JS.
     // The browser will send them automatically with requests.
   }
-} 
+}

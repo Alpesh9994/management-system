@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AuthService } from './features/auth/services/auth.service';
 
@@ -10,7 +10,8 @@ import { AuthService } from './features/auth/services/auth.service';
 })
 export class AppComponent {
   title = 'management-system';
-  constructor(private authService: AuthService) {
+  private authService = inject(AuthService);
+  constructor() {
     this.authService.checkTokenExpiry();
   }
 }

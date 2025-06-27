@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
 
   /**
    * Generic GET request
@@ -16,14 +16,14 @@ export class ApiService {
   /**
    * Generic POST request
    */
-  post<T>(url: string, body: any, params?: HttpParams, headers?: HttpHeaders): Observable<T> {
+  post<T>(url: string, body: unknown, params?: HttpParams, headers?: HttpHeaders): Observable<T> {
     return this.http.post<T>(url, body, { params, headers });
   }
 
   /**
    * Generic PUT request
    */
-  put<T>(url: string, body: any, params?: HttpParams, headers?: HttpHeaders): Observable<T> {
+  put<T>(url: string, body: unknown, params?: HttpParams, headers?: HttpHeaders): Observable<T> {
     return this.http.put<T>(url, body, { params, headers });
   }
 
@@ -35,4 +35,4 @@ export class ApiService {
   }
 
   // Extend with more methods as needed (patch, head, etc.)
-} 
+}

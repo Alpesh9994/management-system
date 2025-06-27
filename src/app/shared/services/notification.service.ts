@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { NotificationComponent } from '../components/notification.component';
+import { NotificationComponent } from '../components/notification/notification.component';
 
 @Injectable({ providedIn: 'root' })
 export class NotificationService {
-  constructor(private snackBar: MatSnackBar) {}
+  private snackBar = inject(MatSnackBar);
 
   show(message: string, duration = 3000): void {
     this.snackBar.openFromComponent(NotificationComponent, {
@@ -12,7 +12,7 @@ export class NotificationService {
       duration,
       horizontalPosition: 'right',
       verticalPosition: 'top',
-      panelClass: ['app-notification-snackbar']
+      panelClass: ['app-notification-snackbar'],
     });
   }
 
@@ -31,4 +31,4 @@ export class NotificationService {
   warning(message: string, duration = 3000): void {
     this.show(`⚠️ ${message}`, duration);
   }
-} 
+}
