@@ -1,0 +1,86 @@
+{
+  "project_setup": {
+    "initial_setup": "Create a new Angular 19 project with standalone components, routing, and Angular Material. Set up the project structure with feature-based modules for projects and employees. Include proper TypeScript configuration with strict mode enabled.",
+    "dependencies": "Install and configure Angular Material 19, Angular CDK, Angular Flex Layout, and other essential dependencies. Set up ESLint, Prettier, and Husky for code quality.",
+    "environment_config": "Create environment files for development, staging, and production with proper API endpoints and configuration variables."
+  },
+  "core_architecture": {
+    "shared_module": "Create a shared module with common components, directives, pipes, and services that will be used across the application. Include loading spinners, error handlers, and common UI components.",
+    "core_services": "Implement core services including authentication service, HTTP interceptor for API calls, error handling service, and logging service. Use Angular Signals for state management.",
+    "routing": "Set up lazy-loaded routing with feature modules for projects and employees. Include route guards for authentication and authorization.",
+    "models": "Define TypeScript interfaces and enums for all data models including Employee, Project, Task, Department, Role, and other business entities."
+  },
+  "authentication_module": {
+    "login_component": "Create a modern login component with Angular Material design, form validation, and error handling. Include remember me functionality and password visibility toggle.",
+    "auth_service": "Implement JWT-based authentication service with token storage, refresh token mechanism, and automatic logout on token expiration.",
+    "auth_guards": "Create route guards for protecting routes based on authentication status and user roles. Include admin and manager role guards.",
+    "user_profile": "Create user profile component with editable user information, password change functionality, and profile picture upload."
+  },
+  "employee_management": {
+    "employee_list": "Create an employee list component with search, filter, and pagination. Include employee cards with basic information and quick actions.",
+    "employee_form": "Create comprehensive employee form for adding and editing employees. Include validation for all fields, file upload for profile pictures, and department/role selection.",
+    "employee_details": "Create detailed employee view with tabs for personal info, work history, projects, and performance metrics.",
+    "employee_service": "Implement employee service with CRUD operations, search functionality, and data caching using Angular Signals.",
+    "department_management": "Create department management with hierarchical structure, department heads, and employee assignments."
+  },
+  "project_management": {
+    "project_list": "Create a project dashboard with project cards showing status, progress, team members, and deadlines. Include filtering by status, priority, and assigned employees.",
+    "project_form": "Create project creation/editing form with project details, team assignment, milestones, and file attachments.",
+    "project_details": "Create detailed project view with project timeline, team members, tasks, progress tracking, and project documents.",
+    "project_service": "Implement project service with CRUD operations, team assignment, progress tracking, and project analytics.",
+    "task_management": "Create task management within projects with task creation, assignment, status updates, and time tracking."
+  },
+  "dashboard_and_analytics": {
+    "main_dashboard": "Create a comprehensive dashboard with key metrics, charts, and quick actions. Include project status overview, employee performance, and recent activities.",
+    "analytics": "Implement analytics components with charts showing project progress, employee workload, department performance, and time tracking data.",
+    "reports": "Create reporting functionality with exportable reports for projects, employees, and company performance metrics."
+  },
+  "ui_components": {
+    "navigation": "Create responsive navigation with sidebar menu, breadcrumbs, and user menu. Include mobile-friendly hamburger menu.",
+    "data_tables": "Create reusable data table component with sorting, filtering, pagination, and bulk actions.",
+    "forms": "Create reusable form components with validation, error handling, and consistent styling.",
+    "modals": "Create modal service and components for confirmations, forms, and detailed views.",
+    "notifications": "Implement notification system with toast messages, alerts, and real-time updates."
+  },
+  "data_management": {
+    "api_integration": "Create HTTP services for all API endpoints with proper error handling, retry logic, and request/response interceptors.",
+    "caching": "Implement intelligent caching strategy for frequently accessed data using Angular Signals and localStorage.",
+    "offline_support": "Add offline support with service workers for basic functionality when internet is unavailable.",
+    "data_sync": "Implement data synchronization for offline changes when connection is restored."
+  },
+  "advanced_features": {
+    "real_time_updates": "Implement real-time updates using WebSockets for project status changes, task assignments, and notifications.",
+    "file_management": "Create file upload/download functionality with drag-and-drop support, file preview, and version control.",
+    "calendar_integration": "Create calendar view for project deadlines, employee availability, and meeting scheduling.",
+    "search_functionality": "Implement global search across employees, projects, and tasks with autocomplete and filters.",
+    "export_import": "Create functionality to export data to Excel/PDF and import data from CSV files."
+  },
+  "testing": {
+    "unit_tests": "Write comprehensive unit tests for all components, services, and utilities. Achieve minimum 80% code coverage.",
+    "integration_tests": "Create integration tests for user workflows including login, employee management, and project creation.",
+    "e2e_tests": "Implement end-to-end tests for critical user journeys using Cypress.",
+    "performance_tests": "Add performance testing for large datasets and complex operations."
+  },
+  "deployment": {
+    "build_optimization": "Optimize build configuration for production with tree shaking, code splitting, and asset optimization.",
+    "docker_setup": "Create Docker configuration for containerized deployment with multi-stage builds.",
+    "ci_cd": "Set up GitHub Actions for automated testing, building, and deployment to staging and production environments.",
+    "monitoring": "Implement application monitoring with error tracking, performance metrics, and user analytics."
+  },
+  "documentation": {
+    "readme": "Create comprehensive README with setup instructions, architecture overview, and development guidelines.",
+    "api_documentation": "Document all API endpoints, data models, and service methods with examples.",
+    "user_guide": "Create user documentation with screenshots and step-by-step instructions for all features.",
+    "developer_guide": "Create developer documentation with coding standards, contribution guidelines, and troubleshooting tips."
+  },
+  "specific_implementations": {
+    "employee_assignment": "Implement drag-and-drop functionality for assigning employees to projects with visual feedback and validation.",
+    "project_timeline": "Create interactive project timeline with Gantt chart visualization, milestone tracking, and dependency management.",
+    "performance_reviews": "Create performance review system with self-assessments, manager reviews, and goal tracking.",
+    "time_tracking": "Implement time tracking functionality with start/stop timers, manual entry, and time sheet approval workflow.",
+    "approval_workflows": "Create approval workflows for project changes, employee requests, and expense approvals.",
+    "notifications": "Implement comprehensive notification system with email, in-app, and push notifications for important events.",
+    "audit_trail": "Create audit trail functionality to track all changes to projects, employees, and system settings.",
+    "multi_tenant": "Design system architecture to support multiple companies/tenants with data isolation and shared features."
+  }
+} 

@@ -1,0 +1,149 @@
+{
+  "project": {
+    "name": "Company Management System",
+    "version": "1.0.0",
+    "description": "Full management system for company projects and employee management using Angular 19",
+    "framework": "Angular 19",
+    "architecture": "Feature-based modular architecture with standalone components"
+  },
+  "coding_standards": {
+    "typescript": {
+      "strict": true,
+      "noImplicitAny": true,
+      "strictNullChecks": true,
+      "strictFunctionTypes": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "noUncheckedIndexedAccess": true
+    },
+    "angular": {
+      "useStandaloneComponents": true,
+      "useSignals": true,
+      "useControlFlow": true,
+      "useDefer": true,
+      "useViewTransitions": true
+    },
+    "naming_conventions": {
+      "components": "PascalCase with descriptive names (e.g., ProjectCardComponent)",
+      "services": "PascalCase with 'Service' suffix (e.g., ProjectService)",
+      "interfaces": "PascalCase with 'I' prefix (e.g., IProject)",
+      "enums": "PascalCase (e.g., ProjectStatus)",
+      "constants": "UPPER_SNAKE_CASE (e.g., API_ENDPOINTS)",
+      "files": "kebab-case (e.g., project-card.component.ts)"
+    },
+    "file_structure": {
+      "components": "feature/components/",
+      "services": "feature/services/",
+      "models": "feature/models/",
+      "guards": "feature/guards/",
+      "pipes": "feature/pipes/",
+      "directives": "feature/directives/"
+    }
+  },
+  "architecture_patterns": {
+    "state_management": {
+      "primary": "Angular Signals",
+      "fallback": "NgRx for complex state",
+      "local_state": "Component signals for local state"
+    },
+    "data_flow": {
+      "unidirectional": true,
+      "immutable_updates": true,
+      "reactive_programming": true
+    },
+    "dependency_injection": {
+      "use_providedIn": "root",
+      "feature_services": "providedIn: 'any'",
+      "singleton_services": "providedIn: 'root'"
+    }
+  },
+  "ui_ux_guidelines": {
+    "design_system": {
+      "framework": "Angular Material 19",
+      "theme": "Custom theme with company branding",
+      "responsive": "Mobile-first approach",
+      "accessibility": "WCAG 2.1 AA compliance"
+    },
+    "components": {
+      "reusable": true,
+      "consistent": true,
+      "accessible": true,
+      "testable": true
+    },
+    "layout": {
+      "grid_system": "CSS Grid and Flexbox",
+      "breakpoints": "xs, sm, md, lg, xl",
+      "spacing": "8px base unit system"
+    }
+  },
+  "testing_strategy": {
+    "unit_tests": {
+      "framework": "Jasmine + Karma",
+      "coverage": "Minimum 80%",
+      "components": "Test all public methods and outputs",
+      "services": "Test all business logic"
+    },
+    "integration_tests": {
+      "framework": "Cypress",
+      "e2e": "Critical user journeys",
+      "api_integration": "Test all API endpoints"
+    }
+  },
+  "performance_optimizations": {
+    "bundling": {
+      "lazy_loading": "Feature modules",
+      "tree_shaking": "Enabled",
+      "code_splitting": "Route-based"
+    },
+    "runtime": {
+      "onPush_change_detection": "Use where appropriate",
+      "trackBy_functions": "For all *ngFor loops",
+      "pure_pipes": "Use for data transformations"
+    },
+    "caching": {
+      "http_interceptors": "Cache API responses",
+      "service_workers": "For offline functionality"
+    }
+  },
+  "security_guidelines": {
+    "authentication": {
+      "jwt_tokens": "Secure token storage",
+      "refresh_tokens": "Automatic token refresh",
+      "route_guards": "Protect sensitive routes"
+    },
+    "data_validation": {
+      "input_sanitization": "Sanitize all user inputs",
+      "output_encoding": "Encode all outputs",
+      "xss_protection": "Content Security Policy"
+    },
+    "api_security": {
+      "https_only": "All API calls over HTTPS",
+      "cors_policy": "Proper CORS configuration",
+      "rate_limiting": "Implement rate limiting"
+    }
+  },
+  "code_quality": {
+    "linting": {
+      "eslint": "Angular ESLint rules",
+      "prettier": "Consistent code formatting",
+      "husky": "Pre-commit hooks"
+    },
+    "documentation": {
+      "jsdoc": "Document all public methods",
+      "readme": "Comprehensive project documentation",
+      "api_docs": "OpenAPI/Swagger for APIs"
+    }
+  },
+  "deployment": {
+    "environment": {
+      "development": "Local development server",
+      "staging": "Staging environment for testing",
+      "production": "Production deployment"
+    },
+    "ci_cd": {
+      "github_actions": "Automated testing and deployment",
+      "docker": "Containerized deployment",
+      "monitoring": "Application performance monitoring"
+    }
+  }
+} 
