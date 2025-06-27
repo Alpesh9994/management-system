@@ -1,0 +1,19 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="auth-form">
+  <h2 class="auth-title">Sign In</h2>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Username</mat-label>
+    <mat-icon matPrefix>person</mat-icon>
+    <input matInput formControlName="username" required autocomplete="username" />
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Password</mat-label>
+    <mat-icon matPrefix>lock</mat-icon>
+    <input matInput type="password" formControlName="password" required autocomplete="current-password" />
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" class="full-width">Login</button>
+  <div class="auth-links">
+    <a routerLink="../register">Create account</a>
+    <a routerLink="../forgot-password">Forgot password?</a>
+  </div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+</form>
